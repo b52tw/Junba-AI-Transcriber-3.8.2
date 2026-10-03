@@ -1,0 +1,28 @@
+Junba AI Transcriber v3.8.2｜封包前驗證報告
+================================================
+
+Windows / Python：
+- python -m compileall main.py app：PASS
+- pytest：41 passed, 2 skipped
+- Workflow YAML 解析：PASS
+- PyInstaller spec Python 語法：PASS
+- Portable spec：JunbaP / Junba.exe / _i 短路徑：PASS
+- Single spec：Junba.exe：PASS
+
+Android 靜態／語法驗證：
+- MainActivity.java：已檢查必要 Gemini / Whisper / API Key / Failover 流程
+- LocalWhisperEngine.kt：以本機 stub 編譯：PASS
+- AudioPreprocessor.kt：以本機 stub 編譯：PASS
+- SecureKeyStore.java：Android Keystore AES/GCM 設計
+- Gradle：AGP 8.7.3 / Kotlin 2.0.21 / targetSdk 35
+- 本機 Whisper：dev.ffmpegkit-maintained:whisper-android:1.0.0
+- 本機音訊轉碼：dev.ffmpegkit-maintained:ffmpeg-kit-audio:8.1.7
+- Workflow 會在 GitHub 真正執行 compileDebugKotlin + compileDebugJavaWithJavac + assembleDebug
+
+GitHub Web 上傳：
+- 清除 cache 後實際檔案：83 個（低於 100）
+
+注意：
+- 這個環境沒有 Android SDK/Maven 網路，因此完整 APK 二進位仍需 GitHub Actions 做最後實際編譯。
+- Android 免費 Whisper AAR 目前以 arm64-v8a 為主；本 APK 也限定 arm64-v8a，以符合大多數實體 Android 手機並減少 APK 體積。
+- 本機 Whisper 原始 API 要求 16-bit PCM WAV / 16 kHz / mono；App 已加入 FFmpeg 本機預轉碼，以支援常見 M4A/AAC/MP3/WAV/FLAC/OGG。

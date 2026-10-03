@@ -1,0 +1,31 @@
+Junba AI Transcriber v3.8.2｜GitHub 上傳說明
+================================================
+
+這包已清除 __pycache__ / .pytest_cache / *.pyc。
+實際檔案數：82 個，低於 GitHub 網頁一次拖曳約 100 檔的限制。
+
+請這樣做：
+1. 解壓縮 Junba-v382_GitHub.zip。
+2. 進入「Junba-v382」資料夾。
+3. Ctrl+A 全選「資料夾裡面的內容」，拖到 GitHub Repo 根目錄。
+4. GitHub 根目錄必須直接看到：
+   .github/
+   android/
+   app/
+   hooks/
+   packaging/
+   tests/
+   main.py
+   requirements.txt
+   JunbaAITranscriber_onefile.spec
+   JunbaAITranscriber_portable.spec
+5. 不要只上傳根目錄的散檔，app/android/tests 資料夾一定要一起上傳。
+
+Workflow：.github/workflows/build-windows-v3.8.yml
+
+成功後 Artifacts：
+- Junba-v382-Single    → Junba.exe
+- Junba-v382-Portable  → JunbaP.zip
+- Junba-v382-APK       → Junba.apk
+
+Portable 解壓建議：C:\Junba\

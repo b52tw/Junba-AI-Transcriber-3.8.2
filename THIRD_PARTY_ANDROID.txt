@@ -1,0 +1,22 @@
+Android 本機 Whisper / 音訊轉碼
+=============================
+
+本版 Android 的本機離線 Whisper 使用：
+- dev.ffmpegkit-maintained:whisper-android:1.0.0
+- 專案：https://github.com/ffmpegkit-maintained/whisper
+- 底層：whisper.cpp（MIT License）
+
+手機本機音訊轉碼使用：
+- dev.ffmpegkit-maintained:ffmpeg-kit-audio:8.1.7
+- 專案：https://github.com/ffmpegkit-maintained/ffmpeg
+- 非 GPL audio variant（LGPL-3.0）
+
+模型不包在 APK 內，由使用者在 App 內自行下載：
+- ggml-tiny.bin
+- ggml-base.bin
+- ggml-small.bin
+來源：https://huggingface.co/ggerganov/whisper.cpp
+
+Whisper AAR 需要 16-bit PCM WAV / 16 kHz / mono。
+本 App 會先在手機本機以 FFmpeg 轉碼，再進 Whisper，因此 M4A/AAC/MP3/WAV/FLAC/OGG 可走離線路徑。
+免費 Whisper AAR 目前以 arm64-v8a 為主。

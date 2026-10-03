@@ -1,0 +1,16 @@
+Junba AI Transcriber v3.8.1 FULL R2 驗證報告
+=============================================
+
+本機針對實際 v3.8 原始碼套用相同修改後：
+- Python compileall：PASS
+- 原 v3.8 pytest：38 passed / 2 skipped
+- Word/TXT/Markdown/SRT/VTT/HTML 實際匯出：PASS
+- HTML 核對播放器包含 Markdown 載入：PASS
+- Word 表格建立：PASS
+- Android 原始碼：沿用上一輪 GitHub Actions 已成功完成 compileDebugJavaWithJavac + assembleDebug 的來源
+
+前一輪 Windows 失敗原因已具體排除：
+1. main_window.py open_latest_review 產生未終止字串 -> 已修正 patch 產物，本 FULL R2 不再執行 runtime patch。
+2. test_v38_ktv_import 預期 accept=".txt,.srt,.vtt,.json 前綴 -> 已保留該順序並追加 .md/.markdown。
+
+注意：最終 Windows PyInstaller EXE 與 Android APK 仍以 GitHub Actions 的實際 runner 建置結果為最終二進位驗證。

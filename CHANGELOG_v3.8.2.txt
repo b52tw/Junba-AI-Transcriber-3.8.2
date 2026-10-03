@@ -1,0 +1,14 @@
+峻爸 AI Transcriber v3.8.2
+
+1. Windows Single EXE 縮名為 Junba.exe。
+2. Windows Portable 縮為 JunbaP / _i，並移除 PySide6 collect_all 全量收集。
+3. Workflow 新增 Portable 相對路徑長度檢查與 PATH_REPORT.txt。
+4. GitHub Artifact 改短名 Junba-v382-Single / Portable / APK。
+5. Android 新增「自動混合 / 本機 Whisper / Gemini」。
+6. Android 新增 Whisper.cpp AAR 本機離線辨識與 tiny/base/small 模型下載。
+7. Android 自動依 RAM 建議 tiny/base；本機條件不足時可自動改 Gemini。
+8. Android API Key 新增 AI Studio 一鍵入口、剪貼簿貼上、測試與 Android Keystore 加密記憶。
+9. Android 手機窄螢幕按鈕改直向，平板改橫向，提升響應式操作。
+10. Android 加入本機 FFmpeg 預轉碼，M4A/AAC/MP3/WAV/FLAC/OGG 都可先轉為 16 kHz mono WAV 再走 Whisper。
+11. 自動混合加入雙向 Failover：Whisper 失敗可改 Gemini；Gemini 失敗且本機模型可用時可退回 Whisper。
+12. Whisper 執行緒依手機 CPU 核心數自動調整 2～6 threads。
